@@ -1,0 +1,33 @@
+.note-card {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 25%;
+  min-width: 160px;
+  max-width: 260px;
+}
+.name-icons-container {
+  display: flex;
+  justify-content: space-between;
+}
+.icons-container {
+  display: flex;
+}
+.nav-buttons {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.login-container {
+  height: 100vh;
+}
