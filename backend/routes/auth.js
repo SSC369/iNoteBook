@@ -25,7 +25,7 @@ router.post(
         if (user) {
           return res
             .status(400)
-            .json({ error: "sorry a user with this email already exits." });
+            .json({ error: "Sorry a user with this email already exits!" });
         } else {
           const salt = await bcrypt.genSalt(10);
           const hashedPassword = await bcrypt.hash(req.body.password, salt);

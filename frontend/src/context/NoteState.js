@@ -3,9 +3,9 @@ import { useState } from "react";
 import Cookie from "js-cookie";
 
 const NoteState = (props) => {
-  // const host = "https://inotebook-backend-0jvu.onrender.com";
+  const host = "https://inotebook-backend-9wzs.onrender.com";
 
-  const host = "http://localhost:5000";
+  //const host = "http://localhost:5000";
 
   const jwtToken = Cookie.get("jwt_token");
 
@@ -64,9 +64,13 @@ const NoteState = (props) => {
     setNotes(newNotes);
   };
 
+  const removeNotes = () => {
+    setNotes([]);
+  };
+
   return (
     <noteContext.Provider
-      value={{ notes, editNote, getNotes, addNote, deleteNote }}
+      value={{ notes, removeNotes, editNote, getNotes, addNote, deleteNote }}
     >
       {props.children}
     </noteContext.Provider>

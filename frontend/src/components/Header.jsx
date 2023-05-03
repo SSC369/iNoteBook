@@ -1,14 +1,20 @@
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import Cookie from "js-cookie";
+import noteContext from "../context/notesContext";
+import { useContext } from "react";
 
 const Header = () => {
+  const context = useContext(noteContext);
   let location = useLocation();
   const jwtToken = Cookie.get("jwt_token");
   const navigate = useNavigate();
 
+  const { removeNotes } = context;
+
   const onLogout = () => {
     Cookie.remove("jwt_token");
     navigate("/api/auth/login");
+    removeNotes();
   };
 
   return (

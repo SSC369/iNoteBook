@@ -24,8 +24,9 @@ const Signup = (props) => {
         email: user.email,
         password: user.password,
       };
-      // const host = "https://inotebook-backend-0jvu.onrender.com/api/auth/register";
-      const host = "http://localhost:5000/api/auth/register";
+      const host =
+        "https://inotebook-backend-9wzs.onrender.com/api/auth/register";
+      //  const host = "http://localhost:5000/api/auth/register";
 
       const options = {
         method: "POST",
@@ -43,9 +44,10 @@ const Signup = (props) => {
         Cookie.set("name", data.name, { expires: 10 });
         alert("Account Created Successfully");
         navigate("/");
+        window.location.reload();
       } else {
         const data = await response.json();
-        setErr(data);
+        setErr(data.error);
       }
     }
   };

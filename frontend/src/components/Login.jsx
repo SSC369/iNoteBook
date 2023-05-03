@@ -22,8 +22,8 @@ const Login = () => {
         email: user.email,
         password: user.password,
       };
-      //  const host = "https://inotebook-backend-0jvu.onrender.com/api/auth/login";
-      const host = "http://localhost:5000/api/auth/login";
+      const host = "https://inotebook-backend-9wzs.onrender.com/api/auth/login";
+      // const host = "http://localhost:5000/api/auth/login";
       const options = {
         method: "POST",
         headers: {
